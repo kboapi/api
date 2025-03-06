@@ -6,6 +6,8 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 header('Content-Type: application/json; charset=utf-8');
+
+include_once 'KrungsriBiz.Class.php';
 $jsondata = file_get_contents("php://input");
 $input_data = json_decode($jsondata , true);
 $username = $input_data['username'];

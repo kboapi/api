@@ -35,7 +35,7 @@ class KrungsriBizOnlineModel {
     }
 
     public function Delete_cookie(){
-       return file_get_contents("http://localhost:3003/api/clear_cookie?username=".$this->username);
+       return file_get_contents("http://localhost:8080/api/clear_cookie.php?username=".$this->username);
     }
 
 
@@ -161,7 +161,7 @@ class KrungsriBizOnlineModel {
                    
                 } else {
                    //$this->Delete_cookie();
-                    file_get_contents("http://localhost:3003/api/clear_cookie?username=".$this->username);
+                    file_get_contents("http://localhost:8080/api/clear_cookie.php?username=".$this->username);
                     return [
                         'status' => 404,
                         'msg' => 'error',
@@ -232,7 +232,7 @@ class KrungsriBizOnlineModel {
                 return $data;
             }
         } else {
-            file_get_contents("http://localhost:3003/api/clear_cookie?username=".$this->username);
+            file_get_contents("http://localhost:8080/api/clear_cookie.php?username=".$this->username);
             return [
                 'status' => 404,
                 'msg' => 'error',
@@ -373,7 +373,7 @@ class KrungsriBizOnlineModel {
                 ];
             }else{
                
-                file_get_contents("http://localhost:3003/api/clear_cookie?username=".$this->username);
+                file_get_contents("http://localhost:8080/api/clear_cookie.php?username=".$this->username);
                 return [
                     'status' => 404,
                     'msg' => 'error',

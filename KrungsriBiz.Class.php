@@ -348,13 +348,7 @@ class KrungsriBizOnlineModel {
             $dom = new DOMDocument();
             @$dom->loadHTML($statementPageResponse);
             $xpath = new DOMXPath($dom);
-            $title = "";
-            for ($i = 0; $i < $titles->length; $i++) {
-                if (strpos($titles->item($i)->nodeValue, "Krungsri Biz Online") !== false) {
-                    $title = "Krungsri Biz Online"; 
-                    break;
-                }
-            }
+            $title = trim($xpath->query('//title')->item(0)->nodeValue);
             if ($title == "Krungsri Biz Online") {
                 $GetStatementToday = $this->curlRequest($this->GetStatementToday, "POST", [
                     'pageIndex' => "1",

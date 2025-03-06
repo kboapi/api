@@ -1,5 +1,11 @@
 <?php
-header('Content-Type: application/json');
+error_reporting(0);
+date_default_timezone_set('Asia/Bangkok');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+header('Content-Type: application/json; charset=utf-8');
 
 // Check if request method is POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
